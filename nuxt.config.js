@@ -21,11 +21,17 @@ export default {
   plugins: [
   ],
 
+  serverMiddleware: [
+    { path: '/api/category', handler: '~/api/category.ts' }
+  ],
+
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    // https://github.com/nuxt-community/dotenv-module
+    '@nuxtjs/dotenv',
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
   ],
