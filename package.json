@@ -1,6 +1,9 @@
 {
   "name": "joldau",
   "version": "1.0.0",
+  "engines": {
+    "node": "15.x"
+  },
   "private": true,
   "scripts": {
     "dev": "nuxt",
