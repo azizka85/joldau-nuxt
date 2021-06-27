@@ -1,8 +1,19 @@
-import { ServerMiddleware } from "@nuxt/types"
+import express from 'express'
 import { MongoClient } from 'mongodb'
 
-const categoryServerMiddleware: ServerMiddleware = async (req, res, next) => {
-  let category = null
+const category = express.Router({
+  mergeParams: true
+})
+
+category.get('/:lang/*', async function(req, res, next) {
+  const language = req.params.lang || 'kz'
+
+  const data = {
+    categories: <any>[],
+    answers: <any>[],
+    answersCount: 0
+  }
+
   let error = null
 
   if(process.env.MONGODB_URL) {
@@ -17,9 +28,30 @@ const categoryServerMiddleware: ServerMiddleware = async (req, res, next) => {
       await client.connect()
 
       const db = client.db('joldau')
+
+      const answers = db.collection('answers')
+
+      data.answersCount = await answers.countDocuments({language})
+
+      await answers.find({
+        language        
+      }).sort({
+        updatedAt: -1
+      }).limit(10)
+      .forEach(item => {
+        data.answers.push(item)
+      })
+
       const categories = db.collection('categories')
 
-      category = await categories.findOne({title: 'test'})  
+      await categories.find({
+        language,
+        parentId: null
+      }).sort({
+        createdAt: -1
+      }).forEach(item => {        
+        data.categories.push(item)
+      })      
     } catch(err) {
       error = err      
     } finally {
@@ -28,9 +60,9 @@ const categoryServerMiddleware: ServerMiddleware = async (req, res, next) => {
   }  
 
   res.end(JSON.stringify({
-    data: category,
+    data,
     error
-  }))
-}
+  }))  
+})
 
-export default categoryServerMiddleware
+export default category

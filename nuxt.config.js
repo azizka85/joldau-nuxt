@@ -22,7 +22,7 @@ export default {
   ],
 
   serverMiddleware: [
-    { path: '/api/category', handler: '~/api/category.ts' }
+    { path: '/api', handler: '~/api/index.ts' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -45,7 +45,9 @@ export default {
     // https://github.com/vanhoofmaarten/nuxt-mq#readme
     'nuxt-mq',
     // https://i18n.nuxtjs.org/
-    'nuxt-i18n'
+    'nuxt-i18n',
+    // https://http.nuxtjs.org/
+    '@nuxt/http'
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -119,7 +121,7 @@ export default {
       name: 'English',
       file: 'en-US.js'
     }],
-    defaultLocale: 'kz',
+    defaultLocale: 'kz',    
     lazy: true,
     langDir: '~/locales/'    
   },

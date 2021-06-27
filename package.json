@@ -12,10 +12,12 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxt/http": "^0.6.4",
     "@nuxtjs/pwa": "^3.3.5",
     "bootstrap": "^4.6.0",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.9.1",
+    "express": "^4.17.1",
     "mongodb": "^3.6.9",
     "nuxt": "^2.15.3",
     "nuxt-i18n": "^6.27.0",

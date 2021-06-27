@@ -153,6 +153,79 @@ html {
 					font-size: 1rem;
 				}			
 			}
-		}		
+		}
+		
+		main {
+			margin: 0.5rem;
+			padding: 0;	
+
+			.title {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				flex-wrap: wrap;
+
+				h5 {
+					margin-bottom: 0.25rem;
+				}			
+
+				button {
+					padding: 0 0.5rem;
+				}
+			}
+
+			.underline {
+				border-bottom: solid 1px var(--watermark-color);
+			}
+
+			h6 {
+				color: var(--watermark-color);
+			}
+
+			.card {
+				padding: 0.5rem 1rem;
+				background-color: var(--content-background-color);
+				border-radius: 1rem;	
+				box-shadow: 0 2px 2px 0 rgb(0 0 0 / 8%), 0 0 2px 0 rgb(0 0 0 / 4%);
+
+				.card-title {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+
+					.card-title-content {
+						flex: 1;
+						color: var(--primary-color);
+						text-decoration: none;
+						display: block;
+						line-height: 1.4;
+					}
+
+					.card-title-content:hover {
+						color: var(--text-selected-color);
+					}
+
+					.stroke {
+						color: var(--primary-color);
+					}
+
+					.fill {
+						color: var(--text-selected-color);
+					}
+				}
+
+				.description {
+					color: var(--text-color);
+				}	
+
+				.info {
+					color: var(--watermark-color);
+				}
+				
+				.date-time {
+					color: var(--text-color);
+				}	
+			}
+		}
   }	
 }

@@ -9,5 +9,10 @@ export default {
   password: 'Пароль',
   cancel: 'Отмена',
   username: 'Имя',
-  photo: 'Фото'
+  photo: 'Фото',
+  guide: 'Путеводитель',
+  answers_count: 'Нет ответов | {n} ответ | {n} ответа | {n} ответов',
+  categories: 'Категории',
+  answers: 'Ответы',
+  created: 'Создано'
 }

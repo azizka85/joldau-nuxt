@@ -9,5 +9,10 @@ export default {
   password: 'Пароль',
   cancel: 'Болдырмау',
   username: 'Аты-жөні',
-  photo: 'Фото'
+  photo: 'Фото',
+  guide: 'Жолдама',
+  answers_count: '{n} жауап',
+  categories: 'Категориялар',
+  answers: 'Жауаптар',
+  created: 'Жасалған'
 }

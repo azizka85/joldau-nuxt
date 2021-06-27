@@ -31,7 +31,7 @@
             </b-dropdown-item>            
           </b-dropdown>
         </b-list-group-item>
-        <b-list-group-item :to="localePath('category')">
+        <b-list-group-item :to="localePath('/')">
           <b-icon-search class="menu-item-icon" />
           &nbsp;
           {{ $t('seacrh_answers') }}

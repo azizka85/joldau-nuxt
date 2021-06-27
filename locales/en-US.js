@@ -9,5 +9,10 @@ export default {
   password: 'Password',
   cancel: 'Cancel',
   username: 'Name',
-  photo: 'Photo'
+  photo: 'Photo',
+  guide: 'Guide',
+  answers_count: 'No answers | {n} answer | {n} answers',
+  categories: 'Categories',
+  answers: 'Answers',
+  created: 'Created'
 }
